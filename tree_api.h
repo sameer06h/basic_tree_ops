@@ -209,16 +209,16 @@ NODE delete_frm_BST(int element, NODE root)
        // suc will inherit the left subtree of current node
        suc->llink = cur->llink;
        q = cur->rlink;
+   }
 
-       free(cur);
-       // parent is NULL return, q as the new root
-       if(parent == NULL) return q;
+   free(cur);
+   // parent is NULL return, q as the new root
+   if(parent == NULL) return q;
 
-       if(cur == parent->llink) {
-           parent->llink = q;
-       } else {
-           parent->rlink = q;
-       }
+   if(cur == parent->llink) {
+       parent->llink = q;
+   } else {
+       parent->rlink = q;
    }
 
    return root;
